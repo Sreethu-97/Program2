@@ -1,0 +1,23 @@
+Expt:5
+
+#1.TRAINING
+
+#LOAD DATA
+
+import pandas as pd
+iris=pd.read_csv("/content/heart.csv")
+x=iris[['trtbps','chol','thalachh','oldpeak']]
+y=iris['output']
+
+#ALGORITHM
+
+from sklearn.naive_bayes import GaussianNB
+ML= GaussianNB() 
+
+#FIT DATA
+
+ML=ML.fit(x,y)
+
+#2.TESTING
+result=ML.predict([[130, 240, 120, 3.7]])
+print(result)
